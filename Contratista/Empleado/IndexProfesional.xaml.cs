@@ -84,10 +84,13 @@ namespace Contratista.Empleado
             await Navigation.PushAsync(new MostrarPortafolio(detalles.id_portafolio_p, detalles.nombre, detalles.imagen_1, detalles.imagen_2, detalles.imagen_3,
                                                             detalles.imagen_4, detalles.imagen_5, detalles.imagen_6, detalles.imagen_7, detalles.id_profesional));
         }
-
         protected void Button_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new AgregarPortafolio(idProfesional, nombre_profesionales));
+        }
+        private void BtnCV_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AgregarCurriculum(idProfesional));
         }
     }
 }

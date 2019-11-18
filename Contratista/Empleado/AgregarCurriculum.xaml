@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Contratista.Empleado.AgregarCurriculum">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
+                    <Button Text="Pick file" Clicked="PickFile_Clicked" />
+                </StackLayout>
+                <Label x:Name="FileNameLabel" Text="" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Label x:Name="FilePathLabel" Text="" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Image x:Name="FileImagePreview" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Button x:Name="btnAgregarPDF" Text="Agregar PDF"  Clicked="BtnAgregarPDF_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

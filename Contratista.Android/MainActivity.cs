@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Plugin.CurrentActivity;
+using Android.Content;
 
 namespace Contratista.Android
 {
@@ -26,7 +27,6 @@ namespace Contratista.Android
             Xamarin.Essentials.Platform.Init(this, bundle);
             LoadApplication(new App());
         }
-        
     }
 }
 

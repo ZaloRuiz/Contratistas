@@ -69,9 +69,9 @@ namespace Contratista
                 }
             }
 
-            catch (Exception erro)
+            catch (Exception err)
             {
-                Console.Write("EEERRROOOORRR= " + erro);
+                await DisplayAlert("ERROR", err.ToString(), "OK");
             }
             listaPortafolios.ItemsSource = portafolios_empresas.Distinct();
         }

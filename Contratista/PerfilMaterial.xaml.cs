@@ -68,9 +68,9 @@ namespace Contratista
                 }
             }
 
-            catch (Exception erro)
+            catch (Exception err)
             {
-                Console.Write("EEERRROOOORRR= " + erro);
+                await DisplayAlert("ERROR", err.ToString(), "OK");
             }
             listaProducto.ItemsSource = productos.Distinct();
         }

@@ -14,7 +14,7 @@
                     <Label Text="SELECCIONA UNA CATEGORIA" FontSize="Large" VerticalOptions="CenterAndExpand" TextColor="White"  HorizontalOptions="Center"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" Padding="0,0,0,5">
-                    <SearchBar x:Name="buscador" Placeholder="Buscar..." VerticalOptions="Center" HorizontalOptions="FillAndExpand" BackgroundColor="White"/>
+                    <SearchBar x:Name="buscador" Placeholder="Buscar..." VerticalOptions="Center" HorizontalOptions="FillAndExpand" BackgroundColor="White" SearchButtonPressed="Buscador_SearchButtonPressed"/>
                 </StackLayout>
                 <Grid  BackgroundColor="White" ColumnSpacing="1" RowSpacing="1" VerticalOptions="FillAndExpand" Padding="1,1,1,1" >
                     <Grid.ColumnDefinitions>

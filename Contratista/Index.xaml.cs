@@ -21,6 +21,7 @@ namespace Contratista
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Index : TabbedPage
     {
+        private string TextoBuscador;
         public Index()
         {
             InitializeComponent();
@@ -62,7 +63,8 @@ namespace Contratista
 
         private void TapGestureRecognizer_Tapped_5(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Feed_Back.Info());
+            //Navigation.PushAsync(new Feed_Back.Info());
+            //Navigation.PushAsync(new Busqueda());
         }
 
         private async void BtnIngresar_Clicked(object sender, EventArgs e)
@@ -176,6 +178,12 @@ namespace Contratista
             {
                 await DisplayAlert("Error", erro.ToString(), "OK");
             }
+        }
+        
+        private void Buscador_SearchButtonPressed(object sender, EventArgs e)
+        {
+            TextoBuscador = buscador.Text;
+            Navigation.PushAsync(new Busqueda(TextoBuscador));
         }
     }
 }

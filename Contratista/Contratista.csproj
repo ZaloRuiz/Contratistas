@@ -11,6 +11,7 @@
 <PackageReference Include="Xamarin.Essentials" Version="1.3.0" />
 <PackageReference Include="Xamarin.Forms" Version="3.6.0.344457" />
 <PackageReference Include="Syncfusion.Xamarin.SfBusyIndicator" Version="17.3.0.26" />
+<PackageReference Include="Xamarin.Plugin.FilePicker" Version="2.1.34" />
 
 
 
@@ -51,7 +52,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Busqueda.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Empleado\AgregarCatalogo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Empleado\AgregarCurriculum.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Index.xaml">
