@@ -8,6 +8,8 @@ using Android.Widget;
 using Android.OS;
 using Plugin.CurrentActivity;
 using Android.Content;
+using Plugin.FilePicker;
+using Plugin.Permissions;
 
 namespace Contratista.Android
 {
@@ -26,6 +28,10 @@ namespace Contratista.Android
             global::Xamarin.Forms.Forms.Init(this, bundle);
             Xamarin.Essentials.Platform.Init(this, bundle);
             LoadApplication(new App());
+        }
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        {
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }

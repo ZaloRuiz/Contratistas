@@ -63,8 +63,7 @@ namespace Contratista
 
         private void TapGestureRecognizer_Tapped_5(object sender, EventArgs e)
         {
-            //Navigation.PushAsync(new Feed_Back.Info());
-            //Navigation.PushAsync(new Busqueda());
+            Navigation.PushAsync(new Feed_Back.Info());
         }
 
         private async void BtnIngresar_Clicked(object sender, EventArgs e)

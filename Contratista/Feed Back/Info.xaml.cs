@@ -16,44 +16,46 @@ namespace Contratista.Feed_Back
 		{
 			InitializeComponent ();
             //On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
-
         }
 
-        private void BtnIalbanil_Clicked(object sender, EventArgs e)
+        private void BtnContactanos_Clicked(object sender, EventArgs e)
         {
-            //Navigation.PushAsync(new ListaAlbanil());
+            //contactanos
         }
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ContactanosCliente());
+            //contactanos
         }
 
         private void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ManualUsuario());
+            //manual de usuario
         }
+
+        private void BtnManual_Clicked(object sender, EventArgs e)
+        {
+            //manual de usuario
+        }
+
         private void TapGestureRecognizer_Tapped_2(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new InfoApp());
+            //info de la app
         }
+
+        private void BtnInfoApp_Clicked(object sender, EventArgs e)
+        {
+            //info de la app
+        }
+
         private void TapGestureRecognizer_Tapped_3(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Terminos());
-        }
-        private void TapGestureRecognizer_Tapped_4(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new InfoDMR());
+            //terminos y condiciones
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private void BtnTerminos_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ContactanosCliente());
-        }
-
-        private void TapGestureRecognizer_Tapped_5(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new ContactanosCliente());
+            //terminos y condiciones
         }
     }
 }

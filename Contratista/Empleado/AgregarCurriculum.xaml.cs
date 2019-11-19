@@ -13,6 +13,8 @@ using Xamarin.Forms.Xaml;
 using Newtonsoft.Json;
 using System.Net;
 using System.IO;
+using Plugin.Permissions;
+using Xamarin.Forms.PlatformConfiguration;
 
 namespace Contratista.Empleado
 {
@@ -51,7 +53,7 @@ namespace Contratista.Empleado
             {
                 FileNameLabel.Text = ex.ToString();
                 FilePathLabel.Text = string.Empty;
-                FileImagePreview.IsVisible = false;
+                FileImagePreview.IsVisible = true;
             }
         }
         
