@@ -3,16 +3,39 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Contratista.Empleado.AgregarCurriculum">
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
-                    <Button Text="Pick file" Clicked="PickFile_Clicked" />
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Nombre: " FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry x:Name="txtNombre" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
                 </StackLayout>
-                <Label x:Name="FileNameLabel" Text="" VerticalOptions="Center" HorizontalOptions="Center" />
-                <Label x:Name="FilePathLabel" Text="" VerticalOptions="Center" HorizontalOptions="Center" />
-                <Image x:Name="FileImagePreview" VerticalOptions="Center" HorizontalOptions="Center" />
-                <Button x:Name="btnAgregarPDF" Text="Agregar PDF"  Clicked="BtnAgregarPDF_Clicked"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Fecha nacimiento: " FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry x:Name="txtFechaNac" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Telefono: " FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry x:Name="txtTelefono" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Email: " FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry x:Name="txtEmail" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="FORMACION ACADEMICA" FontAttributes="Bold" FontSize="Large"/>
+                        <Button x:Name="agregarFormacionAcademica" Text="AGREGAR" HorizontalOptions="End" Clicked="AgregarFormacionAcademica_Clicked"/>
+                    </StackLayout>
+                    <StackLayout x:Name="stkAcademica"/>
+                </StackLayout>
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="EXPERIENCIA LABORAL" FontAttributes="Bold" FontSize="Large"/>
+                        <Button x:Name="agregarExperienciaLaboral" Text="AGERGAR" HorizontalOptions="End" Clicked="AgregarExperienciaLaboral_Clicked"/>
+                    </StackLayout>
+                    <StackLayout x:Name="stkLaboral"/>
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

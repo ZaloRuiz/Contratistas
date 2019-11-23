@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Contratista.Empleado.AgregarExperienciaLaboral">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Cargo: " FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry x:Name="txtCargo" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Empresa: " FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry x:Name="txtEmpresa" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Duracion: " FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <DatePicker x:Name="pick1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    <DatePicker x:Name="pick2" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Descripcion: " FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry x:Name="txtDescripcion" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Button x:Name="btnGuardar" Text="GUARDAR" HorizontalOptions="Center" VerticalOptions="Center" Clicked="BtnGuardar_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -17,6 +17,8 @@ namespace Contratista.Empleado
 	{
         private int idProfesional;
         private string nombre_profesionales;
+        private string emails;
+        private int telefonos;
         ObservableCollection<Portafolio_profesional> portafolio_Profesionals = new ObservableCollection<Portafolio_profesional>();
         public ObservableCollection<Portafolio_profesional> Portafolios { get { return portafolio_Profesionals; } }
         public IndexProfesional(int id_profesional, string nombre, string apellido_paterno, string apellido_materno, int telefono, string email, string rubro, string estado,
@@ -24,7 +26,9 @@ namespace Contratista.Empleado
         {
             InitializeComponent();
             idProfesional = id_profesional;
-            nombre_profesionales = nombre;
+            nombre_profesionales = nombre + " " + apellido_paterno + " " + apellido_materno;
+            emails = email;
+            telefonos = telefono;
             txtNombre.Text = nombre + " " + apellido_paterno + " " + apellido_materno;
             txtTelefono.Text = telefono.ToString();
             txtEmail.Text = email;
@@ -90,7 +94,7 @@ namespace Contratista.Empleado
         }
         private void BtnCV_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new AgregarCurriculum(idProfesional));
+            Navigation.PushAsync(new AgregarCurriculum(idProfesional, nombre_profesionales, emails, telefonos));
         }
     }
 }

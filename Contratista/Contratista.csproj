@@ -62,6 +62,12 @@
     <EmbeddedResource Update="Empleado\AgregarCurriculum.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Empleado\AgregarExperienciaLaboral.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Empleado\AgregarFormacionAcademica.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Index.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>

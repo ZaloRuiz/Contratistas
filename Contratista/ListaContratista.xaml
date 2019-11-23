@@ -12,6 +12,9 @@
             <ListView.ItemTemplate  >
                 <DataTemplate>
                     <ViewCell >
+                        <ViewCell.Effects>
+                            
+                        </ViewCell.Effects>
                         <Frame CornerRadius="5"
                                HasShadow="True"
                                Margin="5,5,5,5">

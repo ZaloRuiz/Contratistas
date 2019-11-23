@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Contratista.Empleado.AgregarFormacionAcademica">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Titulo: " FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry x:Name="txtTitulo" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Lugar: " FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry x:Name="txtLugar" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Button x:Name="btnGuardar" Text="GUARDAR" HorizontalOptions="Center" VerticalOptions="Center" Clicked="BtnGuardar_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

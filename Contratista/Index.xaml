@@ -104,7 +104,10 @@
             <StackLayout VerticalOptions="Center">
                 <StackLayout Orientation="Vertical" >
                     <Entry x:Name="usuarioEntry" Placeholder="Usuario" WidthRequest="300" HorizontalOptions="Center"/>
-                    <Entry x:Name="contrasenaEntry" Placeholder="Contraseña" WidthRequest="300" HorizontalOptions="Center"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Entry x:Name="contrasenaEntry" Placeholder="Contraseña" WidthRequest="300" HorizontalOptions="Center"/>
+                    </StackLayout>
+                    
                 </StackLayout>
                 <busyindicator:SfBusyIndicator
                     

@@ -22,74 +22,117 @@ namespace Contratista.Empleado
 	public partial class AgregarCurriculum : ContentPage
 	{
         private int IdProfesional;
-        private MediaFile _mediaFile2;
-        private FileData _mediaFile;
-        private string ruta;
-        private FileData filedata;
-        public AgregarCurriculum (int idProfesional)
+        
+        public AgregarCurriculum (int idProfesional, string nombre_profesionales, string emails, int telefonos)
 		{
 			InitializeComponent ();
             IdProfesional = idProfesional;
-		}
-
-        private async void PickFile_Clicked(object sender, EventArgs args)
-        {
-            await PickAndShowFile(null);
+            txtNombre.Text = nombre_profesionales;
+            txtTelefono.Text = telefonos.ToString();
+            txtEmail.Text = emails;
+            Formacion_academica();
+            Experiencia_laboral();
         }
-
-        private async Task PickAndShowFile(string[] fileTypes)
-        {
-            try
-            {
-                _mediaFile = await CrossFilePicker.Current.PickFile();
-                if (_mediaFile != null)
-                {
-                    FileNameLabel.Text = _mediaFile.FileName;
-                    FilePathLabel.Text = _mediaFile.FilePath;
-                    ruta = "/api_contratistas/PDF/" + FileNameLabel.Text;
-                }
-            }
-            catch (Exception ex)
-            {
-                FileNameLabel.Text = ex.ToString();
-                FilePathLabel.Text = string.Empty;
-                FileImagePreview.IsVisible = true;
-            }
-        }
-        
-        private async void BtnAgregarPDF_Clicked(object sender, EventArgs e)
+        private async void Formacion_academica()
         {
             try
             {
                 HttpClient client = new HttpClient();
-                var content = new MultipartFormDataContent();
-                content.Add(new StreamContent(_mediaFile.GetStream()), "\"file\"", $"\"{_mediaFile.FilePath}\"");
-                var result = await client.PostAsync("http://dmrbolivia.online/api_contratistas/subirPDF.php", content);
+                var response = await client.GetStringAsync("http://dmrbolivia.online/api_contratistas/curriculum/listaFormacionAcademica.php");
+                var listformacade = JsonConvert.DeserializeObject<List<Formacion_academica>>(response);
 
-                Curriculum curriculum = new Curriculum()
+                foreach (var item in listformacade.Distinct())
                 {
-                    direccion = ruta,
-                    id_profesional = IdProfesional
-                };
-                var json = JsonConvert.SerializeObject(curriculum);
-                var content1 = new StringContent(json, Encoding.UTF8, "application/json");
-                var result1 = await client.PostAsync("http://dmrbolivia.online/api_contratistas/curriculum/agregarCurriculum.php", content1);
+                    if (item.id_profesional == IdProfesional)
+                    {
+                        StackLayout stk1 = new StackLayout();
+                        stk1.BackgroundColor = Color.LightGray;
+                        stkAcademica.Children.Add(stk1);
 
-                if (result1.StatusCode == HttpStatusCode.OK)
-                {
-                    await DisplayAlert("GUARDADO", "Se agrego correctamente", "OK");
-                    await Navigation.PopAsync();
-                }
-                else
-                {
-                    await DisplayAlert("ERROR", result.StatusCode.ToString(), "OK");
-                    await Navigation.PopAsync();
+                        Label txtNombre = new Label();
+                        txtNombre.Text = item.titulo;
+                        txtNombre.TextColor = Color.Black;
+                        txtNombre.FontSize = 30;
+                        stk1.Children.Add(txtNombre);
+
+                        Label txtDesc = new Label();
+                        txtDesc.Text = item.lugar;
+                        txtDesc.FontSize = 15;
+                        txtDesc.TextColor = Color.Black;
+                        stk1.Children.Add(txtDesc);
+
+                        BoxView bv = new BoxView();
+                        bv.HeightRequest = 5;
+                        bv.Color = Color.Gray;
+                    }
                 }
             }
-            catch (Exception ex)
+            catch (Exception erro)
             {
-                await DisplayAlert("Error", ex.ToString(), "OK");
+                Console.Write("EEERRROOOORRR= " + erro);
             }
+        }
+
+        private async void Experiencia_laboral()
+        {
+            try
+            {
+                HttpClient client = new HttpClient();
+                var response = await client.GetStringAsync("http://dmrbolivia.online/api_contratistas/curriculum/listaExperienciaLaboral.php");
+                var listexplaboral = JsonConvert.DeserializeObject<List<Experiencia_laboral>>(response);
+
+                foreach (var item in listexplaboral.Distinct())
+                {
+                    if (item.id_profesional == IdProfesional)
+                    {
+                        StackLayout stk1 = new StackLayout();
+                        stk1.BackgroundColor = Color.LightGray;
+                        stkLaboral.Children.Add(stk1);
+
+                        Label txtCargo = new Label();
+                        txtCargo.Text = item.cargo;
+                        txtCargo.TextColor = Color.Black;
+                        txtCargo.FontSize = 30;
+                        stk1.Children.Add(txtCargo);
+
+                        Label txtEmp = new Label();
+                        txtEmp.Text = item.empresa;
+                        txtEmp.FontSize = 15;
+                        txtEmp.TextColor = Color.Black;
+                        stk1.Children.Add(txtEmp);
+
+                        Label txtDurac = new Label();
+                        txtDurac.Text = item.duracion;
+                        txtDurac.FontSize = 15;
+                        txtDurac.TextColor = Color.Black;
+                        stk1.Children.Add(txtDurac);
+
+                        Label txtDesc = new Label();
+                        txtDesc.Text = item.descripcion;
+                        txtDesc.FontSize = 15;
+                        txtDesc.TextColor = Color.Black;
+                        stk1.Children.Add(txtDesc);
+
+                        BoxView bv = new BoxView();
+                        bv.HeightRequest = 5;
+                        bv.Color = Color.Gray;
+                    }
+                }
+            }
+            catch (Exception erro)
+            {
+                Console.Write("EEERRROOOORRR= " + erro);
+            }
+        }
+
+        private void AgregarFormacionAcademica_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AgregarFormacionAcademica(IdProfesional));
+        }
+
+        private void AgregarExperienciaLaboral_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AgregarExperienciaLaboral(IdProfesional));
         }
     }
 }
