@@ -5,7 +5,6 @@
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
-		<integer>2</integer>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
@@ -20,8 +19,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>MinimumOSVersion</key>
-	<string>11.3</string>
 	<key>CFBundleDisplayName</key>
 	<string>Contratista</string>
 	<key>CFBundleIdentifier</key>
@@ -50,5 +47,11 @@
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>Contratista</string>
+	<key>UIMainStoryboardFile</key>
+	<string>LaunchScreen</string>
+	<key>MinimumOSVersion</key>
+	<string>12.0</string>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
 </dict>
 </plist>
